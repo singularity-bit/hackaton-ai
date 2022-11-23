@@ -12,7 +12,7 @@ from PIL import Image
 
 app = Flask(__name__)
 print(torch.__version__)
-DETECTION_URL = "/v1/predict"
+DETECTION_URL = "/predict"
 
 model = torch.hub.load("ultralytics/yolov5", 'custom','./model/best.pt' )
 model.conf=0.5
