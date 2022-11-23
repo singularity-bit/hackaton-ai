@@ -41,6 +41,4 @@ if __name__ == "__main__":
     parser.add_argument("--port", type=int, help="port number")
     opt = parser.parse_args()
 
-
-
     app.run(port=opt.port)  # debug=True causes Restarting with stat
