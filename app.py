@@ -37,8 +37,4 @@ def stream_predict():
         return output
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Flask API exposing YOLOv5 model")
-    parser.add_argument("--port", type=int, help="port number")
-    opt = parser.parse_args()
-
-    app.run(port=opt.port)  # debug=True causes Restarting with stat
+    app.run(debug=True,host="0.0.0.0")  # debug=True causes Restarting with stat
