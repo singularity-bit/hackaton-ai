@@ -37,7 +37,9 @@ def stream_predict():
         im_file = request.files["image"]
         im_bytes = im_file.read()
         output=batch_predict(im_bytes)
-        return output
+        response=jsonify(output)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
 
 if __name__ == "__main__":
     app.run(debug=True,host="0.0.0.0")  # debug=True causes Restarting with stat
