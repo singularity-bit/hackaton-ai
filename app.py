@@ -5,12 +5,15 @@ Run a Flask REST API exposing one or more YOLOv5s models
 
 import argparse
 import io
+from flask_cors import CORS
 
 import torch
 from flask import Flask, request,jsonify
 from PIL import Image
 
 app = Flask(__name__)
+CORS(app)
+
 print(torch.__version__)
 DETECTION_URL = "/predict"
 
