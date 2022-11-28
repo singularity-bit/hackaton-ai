@@ -22,7 +22,7 @@ model.conf=0.5
 
 def batch_predict(image_bytes):
     im = Image.open(io.BytesIO(image_bytes))
-    results = model(im, size=640) 
+    results = model(im) 
     
     return results.pandas().xyxy[0].to_json(orient="records")
 
